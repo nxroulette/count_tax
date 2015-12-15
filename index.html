@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="utf-8" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js"></script>
+        <title>2014 Annual Survey of State Government Tax Collections</title>
+    </head>
+    <body>
+    <center><h1>2014 Annual Survey of State Government Tax Collections</h1></center>
+<center><h2>All Tax Collections By States</h2></center><center>
+    <div id="chart1"><svg style="width:768px;height:800px;"></svg></div>
+
+
+    <script>
+
+
+
+    data_chart1=[{"key": "Serie 1", "values": [{"value": 1.073489064373485, "label": "Alabama"}, {"value": 0.3918984479632021, "label": "Alaska"}, {"value": 1.51129210847333, "label": "Arizona"}, {"value": 1.0322563599381624, "label": "Arkansas"}, {"value": 15.947968448967842, "label": "California"}, {"value": 1.3578245030373817, "label": "Colorado"}, {"value": 1.8409129128881607, "label": "Connecticut"}, {"value": 0.36686818782830566, "label": "Delaware"}, {"value": 4.0871226820684, "label": "Florida"}, {"value": 2.151713202507791, "label": "Georgia"}, {"value": 0.6968889912779639, "label": "Hawaii"}, {"value": 0.42410697550162074, "label": "Idaho"}, {"value": 4.52587923238612, "label": "Illinois"}, {"value": 1.9459336239614895, "label": "Indiana"}, {"value": 0.9554512319519219, "label": "Iowa"}, {"value": 0.8471802832692905, "label": "Kansas"}, {"value": 1.2825317017514004, "label": "Kentucky"}, {"value": 1.1198680457356656, "label": "Louisiana"}, {"value": 0.44437444031394074, "label": "Maine"}, {"value": 2.1864306468915724, "label": "Maryland"}, {"value": 2.9148905697875827, "label": "Massachusetts"}, {"value": 2.8650202887353355, "label": "Michigan"}, {"value": 2.671538572516225, "label": "Minnesota"}, {"value": 0.8749057722458468, "label": "Mississippi"}, {"value": 1.2983690299822077, "label": "Missouri"}, {"value": 0.30673365201663405, "label": "Montana"}, {"value": 0.5633715542787445, "label": "Nebraska"}, {"value": 0.8250825023420764, "label": "Nevada"}, {"value": 0.2636444114892572, "label": "New Hampshire"}, {"value": 3.42814373503637, "label": "New Jersey"}, {"value": 0.6650208614165989, "label": "New Mexico"}, {"value": 8.891573347390445, "label": "New York"}, {"value": 2.7024769905002217, "label": "North Carolina"}, {"value": 0.7069500700910235, "label": "North Dakota"}, {"value": 3.1210580191854436, "label": "Ohio"}, {"value": 1.0514906190425606, "label": "Oklahoma"}, {"value": 1.1185234344840258, "label": "Oregon"}, {"value": 3.9494988732276686, "label": "Pennsylvania"}, {"value": 0.34258941302999274, "label": "Rhode Island"}, {"value": 1.0317692689968203, "label": "South Carolina"}, {"value": 0.1857917549881881, "label": "South Dakota"}, {"value": 1.363707826987409, "label": "Tennessee"}, {"value": 6.3829877746907755, "label": "Texas"}, {"value": 0.7291335568466645, "label": "Utah"}, {"value": 0.34219160861880404, "label": "Vermont"}, {"value": 2.1887642248588324, "label": "Virginia"}, {"value": 2.2463588880811813, "label": "Washington"}, {"value": 0.621417732438183, "label": "West Virginia"}, {"value": 1.8955686285384175, "label": "Wisconsin"}, {"value": 0.2614359270694177, "label": "Wyoming"}]}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.pieChart();
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+        var datum = data_chart1[0].values;
+
+        chart.color(d3.scale.category20c().range());
+
+    chart.tooltipContent(function(key, y, e, graph) {
+          var x = String(key);
+              var y =  String(y)  + ' %';
+
+              tooltip_str = '<center><b>'+x+'</b></center>' + y;
+              return tooltip_str;
+              });
+        chart.showLabels(true);
+
+            chart.donut(false);
+
+    chart.showLegend(true);
+
+
+
+
+        chart
+            .x(function(d) { return d.label })
+            .y(function(d) { return d.value });
+
+        chart.width(768);
+
+        chart.height(800);
+
+
+            d3.select('#chart1 svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 768)
+            .attr('height', 800)
+            .call(chart);
+
+
+        });
+
+
+
+    </script>
+</center><center><h2>State Government Tax CollectionsTax Collections By Category</h2></center><center><h2>Property Taxes</h2></center><center>
+    <div id="chart2"><svg style="width:800px;height:400px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_chart2=[{"key": "Property Taxes", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.329598}, {"x": "Alaska", "y": 0.128076}, {"x": "Arizona", "y": 0.823508}, {"x": "Arkansas", "y": 1.077377}, {"x": "California", "y": 2.176236}, {"x": "Colorado", "y": 0}, {"x": "Connecticut", "y": 0}, {"x": "Delaware", "y": 0}, {"x": "Florida", "y": 0.00025}, {"x": "Georgia", "y": 0.78835}, {"x": "Hawaii", "y": 0}, {"x": "Idaho", "y": 0}, {"x": "Illinois", "y": 0.05471}, {"x": "Indiana", "y": 0.008052}, {"x": "Iowa", "y": 0}, {"x": "Kansas", "y": 0.081267}, {"x": "Kentucky", "y": 0.56237}, {"x": "Louisiana", "y": 0.055363}, {"x": "Maine", "y": 0.035755}, {"x": "Maryland", "y": 0.725694}, {"x": "Massachusetts", "y": 0.003433}, {"x": "Michigan", "y": 1.91991}, {"x": "Minnesota", "y": 0.836743}, {"x": "Mississippi", "y": 0.025103}, {"x": "Missouri", "y": 0.029725}, {"x": "Montana", "y": 0.268508}, {"x": "Nebraska", "y": 0.000143}, {"x": "Nevada", "y": 0.2586}, {"x": "New Hampshire", "y": 0.383126}, {"x": "New Jersey", "y": 0.006705}, {"x": "New Mexico", "y": 0.105637}, {"x": "New York", "y": 0}, {"x": "North Carolina", "y": 0}, {"x": "North Dakota", "y": 0.003026}, {"x": "Ohio", "y": 0}, {"x": "Oklahoma", "y": 0}, {"x": "Oregon", "y": 0.02174}, {"x": "Pennsylvania", "y": 0.045017}, {"x": "Rhode Island", "y": 0.002591}, {"x": "South Carolina", "y": 0.021664}, {"x": "South Dakota", "y": 0}, {"x": "Tennessee", "y": 0}, {"x": "Texas", "y": 0}, {"x": "Utah", "y": 0}, {"x": "Vermont", "y": 0.985478}, {"x": "Virginia", "y": 0.035561}, {"x": "Washington", "y": 1.974354}, {"x": "West Virginia", "y": 0.0}, {"x": "Wisconsin", "y": 0.159069}, {"x": "Wyoming", "y": 0.300096}]}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.multiBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_chart2;
+
+
+
+
+
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                                            if(key == 'Property Taxes'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#chart2 svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 800)
+            .attr('height', 400)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</center><center><h2>Sales and Gross Receipts Taxes</h2></center><center>
+    <div id="chart3"><svg style="width:800px;height:400px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_chart3=[{"key": "General", "yAxis": "1", "values": [{"x": "Alabama", "y": 2.393192}, {"x": "Alaska", "y": 0}, {"x": "Arizona", "y": 5.994048}, {"x": "Arkansas", "y": 3.130274}, {"x": "California", "y": 37.224077}, {"x": "Colorado", "y": 2.615601}, {"x": "Connecticut", "y": 3.981362}, {"x": "Delaware", "y": 0}, {"x": "Florida", "y": 21.48091}, {"x": "Georgia", "y": 5.125502}, {"x": "Hawaii", "y": 2.825041}, {"x": "Idaho", "y": 1.373666}, {"x": "Illinois", "y": 8.51541}, {"x": "Indiana", "y": 7.003426}, {"x": "Iowa", "y": 2.659231}, {"x": "Kansas", "y": 2.983664}, {"x": "Kentucky", "y": 3.131157}, {"x": "Louisiana", "y": 2.923336}, {"x": "Maine", "y": 1.191685}, {"x": "Maryland", "y": 4.195996}, {"x": "Massachusetts", "y": 5.51858}, {"x": "Michigan", "y": 8.419195}, {"x": "Minnesota", "y": 5.441934}, {"x": "Mississippi", "y": 3.304632}, {"x": "Missouri", "y": 3.285563}, {"x": "Montana", "y": 0}, {"x": "Nebraska", "y": 1.763695}, {"x": "Nevada", "y": 3.828869}, {"x": "New Hampshire", "y": 0}, {"x": "New Jersey", "y": 8.885847}, {"x": "New Mexico", "y": 2.098676}, {"x": "New York", "y": 12.668587}, {"x": "North Carolina", "y": 5.842182}, {"x": "North Dakota", "y": 1.320196}, {"x": "Ohio", "y": 10.217826}, {"x": "Oklahoma", "y": 2.599203}, {"x": "Oregon", "y": 0}, {"x": "Pennsylvania", "y": 9.497906}, {"x": "Rhode Island", "y": 0.915468}, {"x": "South Carolina", "y": 3.370643}, {"x": "South Dakota", "y": 0.914979}, {"x": "Tennessee", "y": 6.192281}, {"x": "Texas", "y": 32.336032}, {"x": "Utah", "y": 1.823355}, {"x": "Vermont", "y": 0.354541}, {"x": "Virginia", "y": 3.555745}, {"x": "Washington", "y": 11.767488}, {"x": "West Virginia", "y": 1.221966}, {"x": "Wisconsin", "y": 4.628338}, {"x": "Wyoming", "y": 0.765543}]}, {"key": "Selective", "yAxis": "1", "values": [{"x": "Alabama", "y": 2.419482}, {"x": "Alaska", "y": 0.257696}, {"x": "Arizona", "y": 1.765577}, {"x": "Arkansas", "y": 1.193883}, {"x": "California", "y": 12.777976}, {"x": "Colorado", "y": 1.858693}, {"x": "Connecticut", "y": 2.801042}, {"x": "Delaware", "y": 0.480352}, {"x": "Florida", "y": 7.56602}, {"x": "Georgia", "y": 2.18463}, {"x": "Hawaii", "y": 1.022621}, {"x": "Idaho", "y": 0.447637}, {"x": "Illinois", "y": 7.243099}, {"x": "Indiana", "y": 3.391724}, {"x": "Iowa", "y": 1.112707}, {"x": "Kansas", "y": 0.907236}, {"x": "Kentucky", "y": 2.222967}, {"x": "Louisiana", "y": 2.1923}, {"x": "Maine", "y": 0.719713}, {"x": "Maryland", "y": 3.826541}, {"x": "Massachusetts", "y": 2.41445}, {"x": "Michigan", "y": 3.890369}, {"x": "Minnesota", "y": 4.317412}, {"x": "Mississippi", "y": 1.400323}, {"x": "Missouri", "y": 1.629647}, {"x": "Montana", "y": 0.550254}, {"x": "Nebraska", "y": 0.540257}, {"x": "Nevada", "y": 1.885328}, {"x": "New Hampshire", "y": 0.877035}, {"x": "New Jersey", "y": 3.866004}, {"x": "New Mexico", "y": 0.701199}, {"x": "New York", "y": 10.876202}, {"x": "North Carolina", "y": 4.136302}, {"x": "North Dakota", "y": 0.527934}, {"x": "Ohio", "y": 5.400094}, {"x": "Oklahoma", "y": 1.390155}, {"x": "Oregon", "y": 1.444542}, {"x": "Pennsylvania", "y": 7.921523}, {"x": "Rhode Island", "y": 0.650723}, {"x": "South Carolina", "y": 1.25772}, {"x": "South Dakota", "y": 0.381769}, {"x": "Tennessee", "y": 2.565804}, {"x": "Texas", "y": 13.410566}, {"x": "Utah", "y": 0.858745}, {"x": "Vermont", "y": 0.660419}, {"x": "Virginia", "y": 2.507437}, {"x": "Washington", "y": 3.442776}, {"x": "West Virginia", "y": 1.339027}, {"x": "Wisconsin", "y": 2.731201}, {"x": "Wyoming", "y": 0.160214}]}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.multiBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_chart3;
+
+
+
+
+
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                                            if(key == 'General'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Selective'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#chart3 svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 800)
+            .attr('height', 400)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</center><center><h2>Selective Sales and Gross Receipts Taxes</h2></center><center>
+    <div id="chart4"><svg style="width:1024px;height:400px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_chart4=[{"key": "Alcoholic Beverages Sales Tax", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.181427}, {"x": "Alaska", "y": 0.039078}, {"x": "Arizona", "y": 0.071136}, {"x": "Arkansas", "y": 0.051618}, {"x": "California", "y": 0.354297}, {"x": "Colorado", "y": 0.040886}, {"x": "Connecticut", "y": 0.060686}, {"x": "Delaware", "y": 0.019616}, {"x": "Florida", "y": 0.45237}, {"x": "Georgia", "y": 0.181875}, {"x": "Hawaii", "y": 0.048305}, {"x": "Idaho", "y": 0.00878}, {"x": "Illinois", "y": 0.279587}, {"x": "Indiana", "y": 0.045955}, {"x": "Iowa", "y": 0.014187}, {"x": "Kansas", "y": 0.126861}, {"x": "Kentucky", "y": 0.128534}, {"x": "Louisiana", "y": 0.056967}, {"x": "Maine", "y": 0.017923}, {"x": "Maryland", "y": 0.030808}, {"x": "Massachusetts", "y": 0.078817}, {"x": "Michigan", "y": 0.143641}, {"x": "Minnesota", "y": 0.081328}, {"x": "Mississippi", "y": 0.042402}, {"x": "Missouri", "y": 0.03576}, {"x": "Montana", "y": 0.030053}, {"x": "Nebraska", "y": 0.030258}, {"x": "Nevada", "y": 0.042917}, {"x": "New Hampshire", "y": 0.009545}, {"x": "New Jersey", "y": 0.139438}, {"x": "New Mexico", "y": 0.044968}, {"x": "New York", "y": 0.250926}, {"x": "North Carolina", "y": 0.343344}, {"x": "North Dakota", "y": 0.00922}, {"x": "Ohio", "y": 0.098397}, {"x": "Oklahoma", "y": 0.110941}, {"x": "Oregon", "y": 0.017627}, {"x": "Pennsylvania", "y": 0.346008}, {"x": "Rhode Island", "y": 0.016803}, {"x": "South Carolina", "y": 0.162313}, {"x": "South Dakota", "y": 0.016205}, {"x": "Tennessee", "y": 0.147812}, {"x": "Texas", "y": 1.066512}, {"x": "Utah", "y": 0.048413}, {"x": "Vermont", "y": 0.024065}, {"x": "Virginia", "y": 0.207672}, {"x": "Washington", "y": 0.321412}, {"x": "West Virginia", "y": 0.017295}, {"x": "Wisconsin", "y": 0.057958}, {"x": "Wyoming", "y": 0.001828}]}, {"key": "Amusements Sales Tax", "yAxis": "1", "values": [{"x": "Alabama", "y": 7e-05}, {"x": "Alaska", "y": 0.009205}, {"x": "Arizona", "y": 0.000533}, {"x": "Arkansas", "y": 0.03966}, {"x": "California", "y": 0.0}, {"x": "Colorado", "y": 0.10542}, {"x": "Connecticut", "y": 0.348353}, {"x": "Delaware", "y": 0.0}, {"x": "Florida", "y": 0.187639}, {"x": "Georgia", "y": 0.0}, {"x": "Hawaii", "y": 0.0}, {"x": "Idaho", "y": 0.0}, {"x": "Illinois", "y": 0.662592}, {"x": "Indiana", "y": 0.655894}, {"x": "Iowa", "y": 0.282713}, {"x": "Kansas", "y": 0.000343}, {"x": "Kentucky", "y": 0.000214}, {"x": "Louisiana", "y": 0.675386}, {"x": "Maine", "y": 0.050854}, {"x": "Maryland", "y": 0.431851}, {"x": "Massachusetts", "y": 0.003758}, {"x": "Michigan", "y": 0.106903}, {"x": "Minnesota", "y": 0.044705}, {"x": "Mississippi", "y": 0.127777}, {"x": "Missouri", "y": 0.361046}, {"x": "Montana", "y": 0.0569}, {"x": "Nebraska", "y": 0.005342}, {"x": "Nevada", "y": 0.94729}, {"x": "New Hampshire", "y": 0.000444}, {"x": "New Jersey", "y": 0.219}, {"x": "New Mexico", "y": 0.070226}, {"x": "New York", "y": 0.000996}, {"x": "North Carolina", "y": 0.014157}, {"x": "North Dakota", "y": 0.00362}, {"x": "Ohio", "y": 0.273393}, {"x": "Oklahoma", "y": 0.020823}, {"x": "Oregon", "y": 0.0}, {"x": "Pennsylvania", "y": 1.400232}, {"x": "Rhode Island", "y": 0.0}, {"x": "South Carolina", "y": 0.038481}, {"x": "South Dakota", "y": 0.008885}, {"x": "Tennessee", "y": 0.0}, {"x": "Texas", "y": 0.029659}, {"x": "Utah", "y": 0.0}, {"x": "Vermont", "y": 0.0}, {"x": "Virginia", "y": 7e-05}, {"x": "Washington", "y": 0.0}, {"x": "West Virginia", "y": 0.050465}, {"x": "Wisconsin", "y": 0.000222}, {"x": "Wyoming", "y": 0.0}]}, {"key": "Insurance Premiums Sales Tax", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.304441}, {"x": "Alaska", "y": 0.062292}, {"x": "Arizona", "y": 0.448115}, {"x": "Arkansas", "y": 0.182092}, {"x": "California", "y": 2.362738}, {"x": "Colorado", "y": 0.239431}, {"x": "Connecticut", "y": 0.20569}, {"x": "Delaware", "y": 0.085735}, {"x": "Florida", "y": 0.70234}, {"x": "Georgia", "y": 0.372122}, {"x": "Hawaii", "y": 0.142051}, {"x": "Idaho", "y": 0.075205}, {"x": "Illinois", "y": 0.35924}, {"x": "Indiana", "y": 0.223072}, {"x": "Iowa", "y": 0.105532}, {"x": "Kansas", "y": 0.198355}, {"x": "Kentucky", "y": 0.141639}, {"x": "Louisiana", "y": 0.429146}, {"x": "Maine", "y": 0.106372}, {"x": "Maryland", "y": 0.475294}, {"x": "Massachusetts", "y": 0.346828}, {"x": "Michigan", "y": 0.362397}, {"x": "Minnesota", "y": 0.40328}, {"x": "Mississippi", "y": 0.263809}, {"x": "Missouri", "y": 0.302166}, {"x": "Montana", "y": 0.088106}, {"x": "Nebraska", "y": 0.042746}, {"x": "Nevada", "y": 0.264522}, {"x": "New Hampshire", "y": 0.084518}, {"x": "New Jersey", "y": 0.599169}, {"x": "New Mexico", "y": 0.099832}, {"x": "New York", "y": 1.345394}, {"x": "North Carolina", "y": 0.476376}, {"x": "North Dakota", "y": 0.051047}, {"x": "Ohio", "y": 0.510345}, {"x": "Oklahoma", "y": 0.294762}, {"x": "Oregon", "y": 0.085196}, {"x": "Pennsylvania", "y": 0.773462}, {"x": "Rhode Island", "y": 0.085801}, {"x": "South Carolina", "y": 0.2146}, {"x": "South Dakota", "y": 0.077374}, {"x": "Tennessee", "y": 0.74947}, {"x": "Texas", "y": 1.886289}, {"x": "Utah", "y": 0.113316}, {"x": "Vermont", "y": 0.06002}, {"x": "Virginia", "y": 0.459993}, {"x": "Washington", "y": 0.467351}, {"x": "West Virginia", "y": 0.155021}, {"x": "Wisconsin", "y": 0.185502}, {"x": "Wyoming", "y": 0.02531}]}, {"key": "Motor Fuels Sales Tax", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.534396}, {"x": "Alaska", "y": 0.042467}, {"x": "Arizona", "y": 0.77997}, {"x": "Arkansas", "y": 0.454909}, {"x": "California", "y": 6.063356}, {"x": "Colorado", "y": 0.647104}, {"x": "Connecticut", "y": 0.503252}, {"x": "Delaware", "y": 0.113326}, {"x": "Florida", "y": 2.422718}, {"x": "Georgia", "y": 1.006494}, {"x": "Hawaii", "y": 0.093598}, {"x": "Idaho", "y": 0.248454}, {"x": "Illinois", "y": 1.293967}, {"x": "Indiana", "y": 0.814549}, {"x": "Iowa", "y": 0.452596}, {"x": "Kansas", "y": 0.441843}, {"x": "Kentucky", "y": 0.886161}, {"x": "Louisiana", "y": 0.58886}, {"x": "Maine", "y": 0.240901}, {"x": "Maryland", "y": 0.812739}, {"x": "Massachusetts", "y": 0.732207}, {"x": "Michigan", "y": 0.964119}, {"x": "Minnesota", "y": 0.893351}, {"x": "Mississippi", "y": 0.409836}, {"x": "Missouri", "y": 0.696458}, {"x": "Montana", "y": 0.196965}, {"x": "Nebraska", "y": 0.335153}, {"x": "Nevada", "y": 0.296649}, {"x": "New Hampshire", "y": 0.146101}, {"x": "New Jersey", "y": 0.539155}, {"x": "New Mexico", "y": 0.234881}, {"x": "New York", "y": 1.630358}, {"x": "North Carolina", "y": 1.91567}, {"x": "North Dakota", "y": 0.228022}, {"x": "Ohio", "y": 1.839594}, {"x": "Oklahoma", "y": 0.450807}, {"x": "Oregon", "y": 0.512342}, {"x": "Pennsylvania", "y": 2.231348}, {"x": "Rhode Island", "y": 0.095828}, {"x": "South Carolina", "y": 0.529655}, {"x": "South Dakota", "y": 0.138087}, {"x": "Tennessee", "y": 0.845395}, {"x": "Texas", "y": 3.325916}, {"x": "Utah", "y": 0.372935}, {"x": "Vermont", "y": 0.103551}, {"x": "Virginia", "y": 0.694833}, {"x": "Washington", "y": 1.156242}, {"x": "West Virginia", "y": 0.441096}, {"x": "Wisconsin", "y": 1.000595}, {"x": "Wyoming", "y": 0.100889}]}, {"key": "Pari-mutuels Sales Tax", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.001547}, {"x": "Alaska", "y": 0}, {"x": "Arizona", "y": 0.000216}, {"x": "Arkansas", "y": 0.00309}, {"x": "California", "y": 0.013899}, {"x": "Colorado", "y": 0.000609}, {"x": "Connecticut", "y": 0.006085}, {"x": "Delaware", "y": 8.2e-05}, {"x": "Florida", "y": 0.010412}, {"x": "Georgia", "y": 0.0}, {"x": "Hawaii", "y": 0.0}, {"x": "Idaho", "y": 0.001209}, {"x": "Illinois", "y": 0.006534}, {"x": "Indiana", "y": 0.002273}, {"x": "Iowa", "y": 0.003962}, {"x": "Kansas", "y": 0.0}, {"x": "Kentucky", "y": 0.002421}, {"x": "Louisiana", "y": 0.004385}, {"x": "Maine", "y": 0.001816}, {"x": "Maryland", "y": 0.003071}, {"x": "Massachusetts", "y": 0.000337}, {"x": "Michigan", "y": 0.004252}, {"x": "Minnesota", "y": 0.000492}, {"x": "Mississippi", "y": 0.0}, {"x": "Missouri", "y": 0.0}, {"x": "Montana", "y": 2.1e-05}, {"x": "Nebraska", "y": 0.000143}, {"x": "Nevada", "y": 0.0}, {"x": "New Hampshire", "y": 0.000827}, {"x": "New Jersey", "y": 0.0}, {"x": "New Mexico", "y": 0.000596}, {"x": "New York", "y": 0.02142}, {"x": "North Carolina", "y": 0}, {"x": "North Dakota", "y": 0.001159}, {"x": "Ohio", "y": 0.005024}, {"x": "Oklahoma", "y": 0.001113}, {"x": "Oregon", "y": 0.002253}, {"x": "Pennsylvania", "y": 0.011758}, {"x": "Rhode Island", "y": 0.001147}, {"x": "South Carolina", "y": 0.0}, {"x": "South Dakota", "y": 0.000461}, {"x": "Tennessee", "y": 0.0}, {"x": "Texas", "y": 0.007356}, {"x": "Utah", "y": 0.0}, {"x": "Vermont", "y": 0.0}, {"x": "Virginia", "y": 0.0}, {"x": "Washington", "y": 0.00151}, {"x": "West Virginia", "y": 0.002312}, {"x": "Wisconsin", "y": 0.0}, {"x": "Wyoming", "y": 0.000385}]}, {"key": "Public Utilities Sales Tax", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.734105}, {"x": "Alaska", "y": 0.00423}, {"x": "Arizona", "y": 0.02176}, {"x": "Arkansas", "y": 0.0}, {"x": "California", "y": 0.663448}, {"x": "Colorado", "y": 0.010819}, {"x": "Connecticut", "y": 0.315287}, {"x": "Delaware", "y": 0.059128}, {"x": "Florida", "y": 2.71935}, {"x": "Georgia", "y": 0.0}, {"x": "Hawaii", "y": 0.166179}, {"x": "Idaho", "y": 0.00184}, {"x": "Illinois", "y": 1.651211}, {"x": "Indiana", "y": 0.252652}, {"x": "Iowa", "y": 0.0}, {"x": "Kansas", "y": 0.000353}, {"x": "Kentucky", "y": 0.063898}, {"x": "Louisiana", "y": 0.009158}, {"x": "Maine", "y": 0.032432}, {"x": "Maryland", "y": 0.139346}, {"x": "Massachusetts", "y": 0.023736}, {"x": "Michigan", "y": 0.028412}, {"x": "Minnesota", "y": 5.1e-05}, {"x": "Mississippi", "y": 0.004384}, {"x": "Missouri", "y": 0.0}, {"x": "Montana", "y": 0.04739}, {"x": "Nebraska", "y": 0.053009}, {"x": "Nevada", "y": 0.022636}, {"x": "New Hampshire", "y": 0.069877}, {"x": "New Jersey", "y": 1.012028}, {"x": "New Mexico", "y": 0.029894}, {"x": "New York", "y": 0.929929}, {"x": "North Carolina", "y": 0.403194}, {"x": "North Dakota", "y": 0.040411}, {"x": "Ohio", "y": 1.125461}, {"x": "Oklahoma", "y": 0.046306}, {"x": "Oregon", "y": 0.085401}, {"x": "Pennsylvania", "y": 1.284892}, {"x": "Rhode Island", "y": 0.105296}, {"x": "South Carolina", "y": 0.02845}, {"x": "South Dakota", "y": 0.003709}, {"x": "Tennessee", "y": 0.00684}, {"x": "Texas", "y": 0.768}, {"x": "Utah", "y": 0.024319}, {"x": "Vermont", "y": 0.021791}, {"x": "Virginia", "y": 0.107394}, {"x": "Washington", "y": 0.497993}, {"x": "West Virginia", "y": 0.153588}, {"x": "Wisconsin", "y": 0.379549}, {"x": "Wyoming", "y": 0.004638}]}, {"key": "Tobacco Products Sales Tax", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.117112}, {"x": "Alaska", "y": 0.072004}, {"x": "Arizona", "y": 0.311811}, {"x": "Arkansas", "y": 0.225809}, {"x": "California", "y": 0.833126}, {"x": "Colorado", "y": 0.194192}, {"x": "Connecticut", "y": 0.376489}, {"x": "Delaware", "y": 0.114659}, {"x": "Florida", "y": 0.370993}, {"x": "Georgia", "y": 0.21664}, {"x": "Hawaii", "y": 0.107685}, {"x": "Idaho", "y": 0.047816}, {"x": "Illinois", "y": 0.859865}, {"x": "Indiana", "y": 0.447561}, {"x": "Iowa", "y": 0.225375}, {"x": "Kansas", "y": 0.097813}, {"x": "Kentucky", "y": 0.248979}, {"x": "Louisiana", "y": 0.130045}, {"x": "Maine", "y": 0.13616}, {"x": "Maryland", "y": 0.402403}, {"x": "Massachusetts", "y": 0.660029}, {"x": "Michigan", "y": 0.942148}, {"x": "Minnesota", "y": 0.581872}, {"x": "Mississippi", "y": 0.14605}, {"x": "Missouri", "y": 0.099527}, {"x": "Montana", "y": 0.085404}, {"x": "Nebraska", "y": 0.063425}, {"x": "Nevada", "y": 0.102116}, {"x": "New Hampshire", "y": 0.215012}, {"x": "New Jersey", "y": 0.740605}, {"x": "New Mexico", "y": 0.081272}, {"x": "New York", "y": 1.446184}, {"x": "North Carolina", "y": 0.281773}, {"x": "North Dakota", "y": 0.031262}, {"x": "Ohio", "y": 0.815532}, {"x": "Oklahoma", "y": 0.292752}, {"x": "Oregon", "y": 0.257583}, {"x": "Pennsylvania", "y": 1.028006}, {"x": "Rhode Island", "y": 0.134805}, {"x": "South Carolina", "y": 0.025632}, {"x": "South Dakota", "y": 0.061811}, {"x": "Tennessee", "y": 0.261101}, {"x": "Texas", "y": 1.446144}, {"x": "Utah", "y": 0.113184}, {"x": "Vermont", "y": 0.071854}, {"x": "Virginia", "y": 0.180733}, {"x": "Washington", "y": 0.443185}, {"x": "West Virginia", "y": 0.101779}, {"x": "Wisconsin", "y": 0.640728}, {"x": "Wyoming", "y": 0.02449}]}, {"key": "Other Selective Sales and Gross Receipts Taxes", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.546384}, {"x": "Alaska", "y": 0.02842}, {"x": "Arizona", "y": 0.132036}, {"x": "Arkansas", "y": 0.236705}, {"x": "California", "y": 2.487112}, {"x": "Colorado", "y": 0.620232}, {"x": "Connecticut", "y": 0.9852}, {"x": "Delaware", "y": 0.087806}, {"x": "Florida", "y": 0.700198}, {"x": "Georgia", "y": 0.407499}, {"x": "Hawaii", "y": 0.464803}, {"x": "Idaho", "y": 0.064333}, {"x": "Illinois", "y": 2.130103}, {"x": "Indiana", "y": 0.949768}, {"x": "Iowa", "y": 0.028342}, {"x": "Kansas", "y": 0.041668}, {"x": "Kentucky", "y": 0.751121}, {"x": "Louisiana", "y": 0.298353}, {"x": "Maine", "y": 0.133255}, {"x": "Maryland", "y": 1.531029}, {"x": "Massachusetts", "y": 0.568738}, {"x": "Michigan", "y": 1.338497}, {"x": "Minnesota", "y": 2.312333}, {"x": "Mississippi", "y": 0.406065}, {"x": "Missouri", "y": 0.13469}, {"x": "Montana", "y": 0.045415}, {"x": "Nebraska", "y": 0.010181}, {"x": "Nevada", "y": 0.209198}, {"x": "New Hampshire", "y": 0.350711}, {"x": "New Jersey", "y": 0.616609}, {"x": "New Mexico", "y": 0.13953}, {"x": "New York", "y": 5.250995}, {"x": "North Carolina", "y": 0.701788}, {"x": "North Dakota", "y": 0.163193}, {"x": "Ohio", "y": 0.732348}, {"x": "Oklahoma", "y": 0.172651}, {"x": "Oregon", "y": 0.48414}, {"x": "Pennsylvania", "y": 0.845817}, {"x": "Rhode Island", "y": 0.211043}, {"x": "South Carolina", "y": 0.258589}, {"x": "South Dakota", "y": 0.075237}, {"x": "Tennessee", "y": 0.555186}, {"x": "Texas", "y": 4.88069}, {"x": "Utah", "y": 0.186578}, {"x": "Vermont", "y": 0.379138}, {"x": "Virginia", "y": 0.856742}, {"x": "Washington", "y": 0.555083}, {"x": "West Virginia", "y": 0.417471}, {"x": "Wisconsin", "y": 0.466647}, {"x": "Wyoming", "y": 0.002674}]}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.multiBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_chart4;
+
+
+
+
+
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                                            if(key == 'Alcoholic Beverages Sales Tax'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Amusements Sales Tax'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Insurance Premiums Sales Tax'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Motor Fuels Sales Tax'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Pari-mutuels Sales Tax'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Public Utilities Sales Tax'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Tobacco Products Sales Tax'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Other Selective Sales and Gross Receipts Taxes'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#chart4 svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 1024)
+            .attr('height', 400)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</center><center><h2>License Taxes</h2></center><center>
+    <div id="chart5"><svg style="width:1024px;height:400px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_chart5=[{"key": "Alcoholic Beverages License", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.004225}, {"x": "Alaska", "y": 0.001905}, {"x": "Arizona", "y": 0.005246}, {"x": "Arkansas", "y": 0.004187}, {"x": "California", "y": 0.05555}, {"x": "Colorado", "y": 0.007212}, {"x": "Connecticut", "y": 0.009265}, {"x": "Delaware", "y": 0.001547}, {"x": "Florida", "y": 0.008663}, {"x": "Georgia", "y": 0.003829}, {"x": "Hawaii", "y": 0.0}, {"x": "Idaho", "y": 0.001617}, {"x": "Illinois", "y": 0.012626}, {"x": "Indiana", "y": 0.013073}, {"x": "Iowa", "y": 0.014879}, {"x": "Kansas", "y": 0.003575}, {"x": "Kentucky", "y": 0.006374}, {"x": "Louisiana", "y": 0.0}, {"x": "Maine", "y": 0.005393}, {"x": "Maryland", "y": 0.001358}, {"x": "Massachusetts", "y": 0.003056}, {"x": "Michigan", "y": 0.01654}, {"x": "Minnesota", "y": 0.002211}, {"x": "Mississippi", "y": 0.002945}, {"x": "Missouri", "y": 0.005308}, {"x": "Montana", "y": 0.003215}, {"x": "Nebraska", "y": 0.001475}, {"x": "Nevada", "y": 0.0}, {"x": "New Hampshire", "y": 0.004306}, {"x": "New Jersey", "y": 0.003965}, {"x": "New Mexico", "y": 0.0}, {"x": "New York", "y": 0.064576}, {"x": "North Carolina", "y": 0.015916}, {"x": "North Dakota", "y": 0.000367}, {"x": "Ohio", "y": 0.041327}, {"x": "Oklahoma", "y": 0.001326}, {"x": "Oregon", "y": 0.004609}, {"x": "Pennsylvania", "y": 0.016952}, {"x": "Rhode Island", "y": 0.000174}, {"x": "South Carolina", "y": 0.011382}, {"x": "South Dakota", "y": 0.00084}, {"x": "Tennessee", "y": 0.001317}, {"x": "Texas", "y": 0.071661}, {"x": "Utah", "y": 0.001936}, {"x": "Vermont", "y": 0.00043}, {"x": "Virginia", "y": 0.012756}, {"x": "Washington", "y": 0.153263}, {"x": "West Virginia", "y": 0.00138}, {"x": "Wisconsin", "y": 0.001785}, {"x": "Wyoming", "y": 0.0}]}, {"key": "Amusements License", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.0}, {"x": "Alaska", "y": 0.0}, {"x": "Arizona", "y": 0.0}, {"x": "Arkansas", "y": 0.000426}, {"x": "California", "y": 0.015457}, {"x": "Colorado", "y": 0.000791}, {"x": "Connecticut", "y": 0.000232}, {"x": "Delaware", "y": 0.000328}, {"x": "Florida", "y": 0.014}, {"x": "Georgia", "y": 0.000148}, {"x": "Hawaii", "y": 0.0}, {"x": "Idaho", "y": 0.000754}, {"x": "Illinois", "y": 0.014972}, {"x": "Indiana", "y": 0.005722}, {"x": "Iowa", "y": 0.022703}, {"x": "Kansas", "y": 1.5e-05}, {"x": "Kentucky", "y": 0.000291}, {"x": "Louisiana", "y": 0.0}, {"x": "Maine", "y": 0.000654}, {"x": "Maryland", "y": 0.001158}, {"x": "Massachusetts", "y": 0.000762}, {"x": "Michigan", "y": 0.0}, {"x": "Minnesota", "y": 0.001211}, {"x": "Mississippi", "y": 0.018619}, {"x": "Missouri", "y": 0.00198}, {"x": "Montana", "y": 0.008512}, {"x": "Nebraska", "y": 0.00129}, {"x": "Nevada", "y": 0.095717}, {"x": "New Hampshire", "y": 0.000244}, {"x": "New Jersey", "y": 0.049618}, {"x": "New Mexico", "y": 0.000373}, {"x": "New York", "y": 5e-05}, {"x": "North Carolina", "y": 0}, {"x": "North Dakota", "y": 0.000801}, {"x": "Ohio", "y": 0.016209}, {"x": "Oklahoma", "y": 0.146857}, {"x": "Oregon", "y": 0.000812}, {"x": "Pennsylvania", "y": 0.012157}, {"x": "Rhode Island", "y": 0.000223}, {"x": "South Carolina", "y": 0.001371}, {"x": "South Dakota", "y": 0.00698}, {"x": "Tennessee", "y": 0.000376}, {"x": "Texas", "y": 0.020664}, {"x": "Utah", "y": 0.0}, {"x": "Vermont", "y": 3.6e-05}, {"x": "Virginia", "y": 0.000101}, {"x": "Washington", "y": 0.005699}, {"x": "West Virginia", "y": 0.003352}, {"x": "Wisconsin", "y": 0.000666}, {"x": "Wyoming", "y": 0.0}]}, {"key": "Corporations in General License", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.078166}, {"x": "Alaska", "y": 0.0}, {"x": "Arizona", "y": 0.010368}, {"x": "Arkansas", "y": 0.027999}, {"x": "California", "y": 0.059777}, {"x": "Colorado", "y": 0.017569}, {"x": "Connecticut", "y": 0.027828}, {"x": "Delaware", "y": 1.002576}, {"x": "Florida", "y": 0.298604}, {"x": "Georgia", "y": 0.048078}, {"x": "Hawaii", "y": 0.001691}, {"x": "Idaho", "y": 0.002203}, {"x": "Illinois", "y": 0.345889}, {"x": "Indiana", "y": 0.007045}, {"x": "Iowa", "y": 0.035438}, {"x": "Kansas", "y": 0.063582}, {"x": "Kentucky", "y": 0.100843}, {"x": "Louisiana", "y": 0.188197}, {"x": "Maine", "y": 0.009343}, {"x": "Maryland", "y": 0.106658}, {"x": "Massachusetts", "y": 0.025972}, {"x": "Michigan", "y": 0.022621}, {"x": "Minnesota", "y": 0.007382}, {"x": "Mississippi", "y": 0.182624}, {"x": "Missouri", "y": 0.059421}, {"x": "Montana", "y": 0.003311}, {"x": "Nebraska", "y": 0.002123}, {"x": "Nevada", "y": 0.066665}, {"x": "New Hampshire", "y": 0.050783}, {"x": "New Jersey", "y": 0.275705}, {"x": "New Mexico", "y": 0.024464}, {"x": "New York", "y": 0.063488}, {"x": "North Carolina", "y": 0.617408}, {"x": "North Dakota", "y": 0.0}, {"x": "Ohio", "y": 1.026121}, {"x": "Oklahoma", "y": 0.035351}, {"x": "Oregon", "y": 0.029471}, {"x": "Pennsylvania", "y": 0.229686}, {"x": "Rhode Island", "y": 0.004875}, {"x": "South Carolina", "y": 0.095139}, {"x": "South Dakota", "y": 0.004688}, {"x": "Tennessee", "y": 0.676478}, {"x": "Texas", "y": 0.124996}, {"x": "Utah", "y": 0.000484}, {"x": "Vermont", "y": 0.003276}, {"x": "Virginia", "y": 0.059245}, {"x": "Washington", "y": 0.032335}, {"x": "West Virginia", "y": 0.005424}, {"x": "Wisconsin", "y": 0.020628}, {"x": "Wyoming", "y": 0.013378}]}, {"key": "Hunting and Fishing License", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.021311}, {"x": "Alaska", "y": 0.027833}, {"x": "Arizona", "y": 0.032787}, {"x": "Arkansas", "y": 0.023533}, {"x": "California", "y": 0.101237}, {"x": "Colorado", "y": 0.071142}, {"x": "Connecticut", "y": 0.005269}, {"x": "Delaware", "y": 0.002916}, {"x": "Florida", "y": 0.016275}, {"x": "Georgia", "y": 0.024899}, {"x": "Hawaii", "y": 0.000536}, {"x": "Idaho", "y": 0.034436}, {"x": "Illinois", "y": 0.042936}, {"x": "Indiana", "y": 0.020011}, {"x": "Iowa", "y": 0.028262}, {"x": "Kansas", "y": 0.023522}, {"x": "Kentucky", "y": 0.026536}, {"x": "Louisiana", "y": 0.029665}, {"x": "Maine", "y": 0.016282}, {"x": "Maryland", "y": 0.018149}, {"x": "Massachusetts", "y": 0.005456}, {"x": "Michigan", "y": 0.05844}, {"x": "Minnesota", "y": 0.059156}, {"x": "Mississippi", "y": 0.017862}, {"x": "Missouri", "y": 0.03274}, {"x": "Montana", "y": 0.045606}, {"x": "Nebraska", "y": 0.013576}, {"x": "Nevada", "y": 0.010496}, {"x": "New Hampshire", "y": 0.009804}, {"x": "New Jersey", "y": 0.013206}, {"x": "New Mexico", "y": 0.024655}, {"x": "New York", "y": 0.051775}, {"x": "North Carolina", "y": 0.017488}, {"x": "North Dakota", "y": 0.014814}, {"x": "Ohio", "y": 0.038428}, {"x": "Oklahoma", "y": 0.01991}, {"x": "Oregon", "y": 0.0541}, {"x": "Pennsylvania", "y": 0.074679}, {"x": "Rhode Island", "y": 0.001748}, {"x": "South Carolina", "y": 0.017541}, {"x": "South Dakota", "y": 0.027781}, {"x": "Tennessee", "y": 0.032959}, {"x": "Texas", "y": 0.10439}, {"x": "Utah", "y": 0.02872}, {"x": "Vermont", "y": 0.007319}, {"x": "Virginia", "y": 0.027983}, {"x": "Washington", "y": 0.044906}, {"x": "West Virginia", "y": 0.012599}, {"x": "Wisconsin", "y": 0.066962}, {"x": "Wyoming", "y": 0.034371}]}, {"key": "Motor Vehicle License", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.189345}, {"x": "Alaska", "y": 0.059497}, {"x": "Arizona", "y": 0.198227}, {"x": "Arkansas", "y": 0.153445}, {"x": "California", "y": 3.745377}, {"x": "Colorado", "y": 0.474534}, {"x": "Connecticut", "y": 0.211091}, {"x": "Delaware", "y": 0.05179}, {"x": "Florida", "y": 1.38091}, {"x": "Georgia", "y": 0.337456}, {"x": "Hawaii", "y": 0.16898}, {"x": "Idaho", "y": 0.135169}, {"x": "Illinois", "y": 1.623571}, {"x": "Indiana", "y": 0.208572}, {"x": "Iowa", "y": 0.54867}, {"x": "Kansas", "y": 0.212064}, {"x": "Kentucky", "y": 0.19037}, {"x": "Louisiana", "y": 0.075628}, {"x": "Maine", "y": 0.102306}, {"x": "Maryland", "y": 0.474475}, {"x": "Massachusetts", "y": 0.390879}, {"x": "Michigan", "y": 0.979061}, {"x": "Minnesota", "y": 0.695796}, {"x": "Mississippi", "y": 0.154677}, {"x": "Missouri", "y": 0.272542}, {"x": "Montana", "y": 0.136787}, {"x": "Nebraska", "y": 0.0926}, {"x": "Nevada", "y": 0.166067}, {"x": "New Hampshire", "y": 0.094395}, {"x": "New Jersey", "y": 0.617428}, {"x": "New Mexico", "y": 0.188156}, {"x": "New York", "y": 1.357553}, {"x": "North Carolina", "y": 0.591457}, {"x": "North Dakota", "y": 0.119312}, {"x": "Ohio", "y": 0.725263}, {"x": "Oklahoma", "y": 0.754435}, {"x": "Oregon", "y": 0.514003}, {"x": "Pennsylvania", "y": 0.837823}, {"x": "Rhode Island", "y": 0.069349}, {"x": "South Carolina", "y": 0.214192}, {"x": "South Dakota", "y": 0.076143}, {"x": "Tennessee", "y": 0.269317}, {"x": "Texas", "y": 2.177571}, {"x": "Utah", "y": 0.175679}, {"x": "Vermont", "y": 0.070398}, {"x": "Virginia", "y": 0.451215}, {"x": "Washington", "y": 0.535636}, {"x": "West Virginia", "y": 0.002539}, {"x": "Wisconsin", "y": 0.467502}, {"x": "Wyoming", "y": 0.071954}]}, {"key": "Motor Vehicle Operators License", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.02092}, {"x": "Alaska", "y": 0.0}, {"x": "Arizona", "y": 0.030215}, {"x": "Arkansas", "y": 0.017657}, {"x": "California", "y": 0.280038}, {"x": "Colorado", "y": 0.02866}, {"x": "Connecticut", "y": 0.043717}, {"x": "Delaware", "y": 0.005712}, {"x": "Florida", "y": 0.187182}, {"x": "Georgia", "y": 0.091117}, {"x": "Hawaii", "y": 0.00036}, {"x": "Idaho", "y": 0.009943}, {"x": "Illinois", "y": 0.116206}, {"x": "Indiana", "y": 0.207097}, {"x": "Iowa", "y": 0.021867}, {"x": "Kansas", "y": 0.019622}, {"x": "Kentucky", "y": 0.0166}, {"x": "Louisiana", "y": 0.011581}, {"x": "Maine", "y": 0.010064}, {"x": "Maryland", "y": 0.036859}, {"x": "Massachusetts", "y": 0.105322}, {"x": "Michigan", "y": 0.054695}, {"x": "Minnesota", "y": 0.043544}, {"x": "Mississippi", "y": 0.040086}, {"x": "Missouri", "y": 0.015829}, {"x": "Montana", "y": 0.008042}, {"x": "Nebraska", "y": 0.006062}, {"x": "Nevada", "y": 0.026517}, {"x": "New Hampshire", "y": 0.012125}, {"x": "New Jersey", "y": 0.053016}, {"x": "New Mexico", "y": 0.003671}, {"x": "New York", "y": 0.1455}, {"x": "North Carolina", "y": 0.111132}, {"x": "North Dakota", "y": 0.005289}, {"x": "Ohio", "y": 0.082388}, {"x": "Oklahoma", "y": 0.020109}, {"x": "Oregon", "y": 0.041484}, {"x": "Pennsylvania", "y": 0.054847}, {"x": "Rhode Island", "y": 0.004988}, {"x": "South Carolina", "y": 0.008813}, {"x": "South Dakota", "y": 0.003773}, {"x": "Tennessee", "y": 0.047194}, {"x": "Texas", "y": 0.139337}, {"x": "Utah", "y": 0.015733}, {"x": "Vermont", "y": 0.007795}, {"x": "Virginia", "y": 0.04037}, {"x": "Washington", "y": 0.102924}, {"x": "West Virginia", "y": 0.108409}, {"x": "Wisconsin", "y": 0.039691}, {"x": "Wyoming", "y": 0.002217}]}, {"key": "Public Utilities License", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.014233}, {"x": "Alaska", "y": 0.00084}, {"x": "Arizona", "y": 0.025986}, {"x": "Arkansas", "y": 0.009985}, {"x": "California", "y": 0.388443}, {"x": "Colorado", "y": 0.014156}, {"x": "Connecticut", "y": 0.000676}, {"x": "Delaware", "y": 0.0}, {"x": "Florida", "y": 0.024569}, {"x": "Georgia", "y": 0.0}, {"x": "Hawaii", "y": 0.021183}, {"x": "Idaho", "y": 0.053613}, {"x": "Illinois", "y": 0.016217}, {"x": "Indiana", "y": 0.0}, {"x": "Iowa", "y": 0.01759}, {"x": "Kansas", "y": 0.00534}, {"x": "Kentucky", "y": 0.0}, {"x": "Louisiana", "y": 0.007622}, {"x": "Maine", "y": 0.0}, {"x": "Maryland", "y": 0.0}, {"x": "Massachusetts", "y": 0.0}, {"x": "Michigan", "y": 0.027357}, {"x": "Minnesota", "y": 0.000284}, {"x": "Mississippi", "y": 0.003212}, {"x": "Missouri", "y": 0.020118}, {"x": "Montana", "y": 1.2e-05}, {"x": "Nebraska", "y": 0.0}, {"x": "Nevada", "y": 0.0}, {"x": "New Hampshire", "y": 0.009081}, {"x": "New Jersey", "y": 0.006765}, {"x": "New Mexico", "y": 0.001151}, {"x": "New York", "y": 0.024165}, {"x": "North Carolina", "y": 0}, {"x": "North Dakota", "y": 6e-06}, {"x": "Ohio", "y": 0.029523}, {"x": "Oklahoma", "y": 0.000947}, {"x": "Oregon", "y": 0.014061}, {"x": "Pennsylvania", "y": 0.075269}, {"x": "Rhode Island", "y": 0.0}, {"x": "South Carolina", "y": 0.010144}, {"x": "South Dakota", "y": 0.0}, {"x": "Tennessee", "y": 0.00584}, {"x": "Texas", "y": 0.02808}, {"x": "Utah", "y": 0.0}, {"x": "Vermont", "y": 0.0}, {"x": "Virginia", "y": 0.0}, {"x": "Washington", "y": 0.018689}, {"x": "West Virginia", "y": 0.000369}, {"x": "Wisconsin", "y": 0.072199}, {"x": "Wyoming", "y": 0.0}]}, {"key": "Occupation and Business License, NEC", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.058178}, {"x": "Alaska", "y": 0.04306}, {"x": "Arizona", "y": 0.13136}, {"x": "Arkansas", "y": 0.129711}, {"x": "California", "y": 4.269033}, {"x": "Colorado", "y": 0.044577}, {"x": "Connecticut", "y": 0.132703}, {"x": "Delaware", "y": 0.231407}, {"x": "Florida", "y": 0.198483}, {"x": "Georgia", "y": 0.083662}, {"x": "Hawaii", "y": 0.02948}, {"x": "Idaho", "y": 0.07479}, {"x": "Illinois", "y": 0.469458}, {"x": "Indiana", "y": 0.046157}, {"x": "Iowa", "y": 0.115632}, {"x": "Kansas", "y": 0.065516}, {"x": "Kentucky", "y": 0.126113}, {"x": "Louisiana", "y": 0.110176}, {"x": "Maine", "y": 0.101562}, {"x": "Maryland", "y": 0.213324}, {"x": "Massachusetts", "y": 0.31725}, {"x": "Michigan", "y": 0.164127}, {"x": "Minnesota", "y": 0.440372}, {"x": "Mississippi", "y": 0.100025}, {"x": "Missouri", "y": 0.134644}, {"x": "Montana", "y": 0.098851}, {"x": "Nebraska", "y": 0.009619}, {"x": "Nevada", "y": 0.239476}, {"x": "New Hampshire", "y": 0.091654}, {"x": "New Jersey", "y": 0.495599}, {"x": "New Mexico", "y": 0.039912}, {"x": "New York", "y": 0.176275}, {"x": "North Carolina", "y": 0.233463}, {"x": "North Dakota", "y": 0.086656}, {"x": "Ohio", "y": 0.940646}, {"x": "Oklahoma", "y": 0.078572}, {"x": "Oregon", "y": 0.295379}, {"x": "Pennsylvania", "y": 0.981965}, {"x": "Rhode Island", "y": 0.046827}, {"x": "South Carolina", "y": 0.096472}, {"x": "South Dakota", "y": 0.135841}, {"x": "Tennessee", "y": 0.293122}, {"x": "Texas", "y": 0.668807}, {"x": "Utah", "y": 0.053264}, {"x": "Vermont", "y": 0.018869}, {"x": "Virginia", "y": 0.199707}, {"x": "Washington", "y": 0.294448}, {"x": "West Virginia", "y": 0.011622}, {"x": "Wisconsin", "y": 0.366526}, {"x": "Wyoming", "y": 0.026172}]}, {"key": "Other License Taxes", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.0}, {"x": "Alaska", "y": 0.008812}, {"x": "Arizona", "y": 0.002938}, {"x": "Arkansas", "y": 0.001679}, {"x": "California", "y": 0.007622}, {"x": "Colorado", "y": 0.000975}, {"x": "Connecticut", "y": 0.002243}, {"x": "Delaware", "y": 0.005461}, {"x": "Florida", "y": 0.004554}, {"x": "Georgia", "y": 0.020755}, {"x": "Hawaii", "y": 0.001313}, {"x": "Idaho", "y": 0.003806}, {"x": "Illinois", "y": 0.034068}, {"x": "Indiana", "y": 0.082806}, {"x": "Iowa", "y": 0.003006}, {"x": "Kansas", "y": 0.002218}, {"x": "Kentucky", "y": 0.005098}, {"x": "Louisiana", "y": 0.004221}, {"x": "Maine", "y": 0.008647}, {"x": "Maryland", "y": 0.00187}, {"x": "Massachusetts", "y": 0.16386}, {"x": "Michigan", "y": 0.188854}, {"x": "Minnesota", "y": 0.064507}, {"x": "Mississippi", "y": 0.039168}, {"x": "Missouri", "y": 0.021892}, {"x": "Montana", "y": 0.009935}, {"x": "Nebraska", "y": 0.0}, {"x": "Nevada", "y": 0.003437}, {"x": "New Hampshire", "y": 0.007619}, {"x": "New Jersey", "y": 0.001396}, {"x": "New Mexico", "y": 0.0}, {"x": "New York", "y": 0.001459}, {"x": "North Carolina", "y": 0.013194}, {"x": "North Dakota", "y": 0.0}, {"x": "Ohio", "y": 0.028371}, {"x": "Oklahoma", "y": 0.000261}, {"x": "Oregon", "y": 0.006858}, {"x": "Pennsylvania", "y": 0.019556}, {"x": "Rhode Island", "y": 0.003962}, {"x": "South Carolina", "y": 0.016808}, {"x": "South Dakota", "y": 0.021741}, {"x": "Tennessee", "y": 0.008789}, {"x": "Texas", "y": 0.164396}, {"x": "Utah", "y": 0.001008}, {"x": "Vermont", "y": 0.001873}, {"x": "Virginia", "y": 0.004138}, {"x": "Washington", "y": 0.22706}, {"x": "West Virginia", "y": 0.00706}, {"x": "Wisconsin", "y": 0.00466}, {"x": "Wyoming", "y": 0.0}]}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.multiBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_chart5;
+
+
+
+
+
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                                            if(key == 'Alcoholic Beverages License'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Amusements License'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Corporations in General License'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Hunting and Fishing License'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Motor Vehicle License'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Motor Vehicle Operators License'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Public Utilities License'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Occupation and Business License, NEC'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Other License Taxes'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#chart5 svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 1024)
+            .attr('height', 400)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</center><center><h2>Income Taxes</h2></center><center>
+    <div id="chart6"><svg style="width:800px;height:400px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_chart6=[{"key": "Individual Income Taxes", "yAxis": "1", "values": [{"x": "Alabama", "y": 3.206583}, {"x": "Alaska", "y": 0}, {"x": "Arizona", "y": 3.462413}, {"x": "Arkansas", "y": 2.60216}, {"x": "California", "y": 67.995659}, {"x": "Colorado", "y": 5.658457}, {"x": "Connecticut", "y": 7.772602}, {"x": "Delaware", "y": 1.040341}, {"x": "Florida", "y": 0}, {"x": "Georgia", "y": 8.965572}, {"x": "Hawaii", "y": 1.745461}, {"x": "Idaho", "y": 1.338075}, {"x": "Illinois", "y": 16.058396}, {"x": "Indiana", "y": 4.896317}, {"x": "Iowa", "y": 3.197578}, {"x": "Kansas", "y": 2.51166}, {"x": "Kentucky", "y": 3.749258}, {"x": "Louisiana", "y": 2.75368}, {"x": "Maine", "y": 1.41411}, {"x": "Maryland", "y": 7.773773}, {"x": "Massachusetts", "y": 13.246221}, {"x": "Michigan", "y": 7.874712}, {"x": "Minnesota", "y": 9.528454}, {"x": "Mississippi", "y": 1.667344}, {"x": "Missouri", "y": 5.361976}, {"x": "Montana", "y": 1.063261}, {"x": "Nebraska", "y": 2.124164}, {"x": "Nevada", "y": 0}, {"x": "New Hampshire", "y": 0.092743}, {"x": "New Jersey", "y": 11.973673}, {"x": "New Mexico", "y": 1.297493}, {"x": "New York", "y": 42.964774}, {"x": "North Carolina", "y": 10.39052}, {"x": "North Dakota", "y": 0.498528}, {"x": "Ohio", "y": 8.424843}, {"x": "Oklahoma", "y": 2.962128}, {"x": "Oregon", "y": 6.649418}, {"x": "Pennsylvania", "y": 10.809736}, {"x": "Rhode Island", "y": 1.088405}, {"x": "South Carolina", "y": 3.422532}, {"x": "South Dakota", "y": 0}, {"x": "Tennessee", "y": 0.239219}, {"x": "Texas", "y": 0}, {"x": "Utah", "y": 2.889912}, {"x": "Vermont", "y": 0.67524}, {"x": "Virginia", "y": 10.877689}, {"x": "Washington", "y": 0}, {"x": "West Virginia", "y": 1.770466}, {"x": "Wisconsin", "y": 6.793269}, {"x": "Wyoming", "y": 0}]}, {"key": "Corporation Net Income Taxes", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.406408}, {"x": "Alaska", "y": 0.408938}, {"x": "Arizona", "y": 0.57518}, {"x": "Arkansas", "y": 0.398493}, {"x": "California", "y": 8.858498}, {"x": "Colorado", "y": 0.717506}, {"x": "Connecticut", "y": 0.627358}, {"x": "Delaware", "y": 0.278872}, {"x": "Florida", "y": 2.04375}, {"x": "Georgia", "y": 0.943806}, {"x": "Hawaii", "y": 0.126045}, {"x": "Idaho", "y": 0.190002}, {"x": "Illinois", "y": 4.284646}, {"x": "Indiana", "y": 0.866747}, {"x": "Iowa", "y": 0.388699}, {"x": "Kansas", "y": 0.330181}, {"x": "Kentucky", "y": 0.674464}, {"x": "Louisiana", "y": 0.481212}, {"x": "Maine", "y": 0.182928}, {"x": "Maryland", "y": 0.982784}, {"x": "Massachusetts", "y": 2.19462}, {"x": "Michigan", "y": 0.881011}, {"x": "Minnesota", "y": 1.315762}, {"x": "Mississippi", "y": 0.526302}, {"x": "Missouri", "y": 0.357724}, {"x": "Montana", "y": 0.150139}, {"x": "Nebraska", "y": 0.306591}, {"x": "Nevada", "y": 0}, {"x": "New Hampshire", "y": 0.542847}, {"x": "New Jersey", "y": 2.368068}, {"x": "New Mexico", "y": 0.205702}, {"x": "New York", "y": 4.861687}, {"x": "North Carolina", "y": 1.360628}, {"x": "North Dakota", "y": 0.250438}, {"x": "Ohio", "y": 0.0}, {"x": "Oklahoma", "y": 0.39729}, {"x": "Oregon", "y": 0.495134}, {"x": "Pennsylvania", "y": 2.301589}, {"x": "Rhode Island", "y": 0.120112}, {"x": "South Carolina", "y": 0.327809}, {"x": "South Dakota", "y": 0.024819}, {"x": "Tennessee", "y": 1.176971}, {"x": "Texas", "y": 0}, {"x": "Utah", "y": 0.30791}, {"x": "Vermont", "y": 0.105817}, {"x": "Virginia", "y": 0.740511}, {"x": "Washington", "y": 0}, {"x": "West Virginia", "y": 0.203508}, {"x": "Wisconsin", "y": 0.986464}, {"x": "Wyoming", "y": 0}]}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.multiBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_chart6;
+
+
+
+
+
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                                            if(key == 'Individual Income Taxes'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Corporation Net Income Taxes'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#chart6 svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 800)
+            .attr('height', 400)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</center><center><h2>Other Taxes</h2></center><center>
+    <div id="chart7"><svg style="width:1024px;height:400px;"></svg></div>
+
+
+    <script>
+
+
+
+        data_chart7=[{"key": "Death and Gift Taxes", "yAxis": "1", "values": [{"x": "Alabama", "y": 8e-06}, {"x": "Alaska", "y": 0.0}, {"x": "Arizona", "y": 0.0}, {"x": "Arkansas", "y": 3e-06}, {"x": "California", "y": 0.0}, {"x": "Colorado", "y": 0.000434}, {"x": "Connecticut", "y": 0.147737}, {"x": "Delaware", "y": 0.001434}, {"x": "Florida", "y": 0.00171}, {"x": "Georgia", "y": 0.0}, {"x": "Hawaii", "y": 0.014789}, {"x": "Idaho", "y": 0.0}, {"x": "Illinois", "y": 0.294138}, {"x": "Indiana", "y": 0.087712}, {"x": "Iowa", "y": 0.090791}, {"x": "Kansas", "y": 0.000136}, {"x": "Kentucky", "y": 0.045844}, {"x": "Louisiana", "y": 0.00015}, {"x": "Maine", "y": 0.023962}, {"x": "Maryland", "y": 0.21378}, {"x": "Massachusetts", "y": 0.401512}, {"x": "Michigan", "y": 0.000177}, {"x": "Minnesota", "y": 0.165159}, {"x": "Mississippi", "y": 9e-06}, {"x": "Missouri", "y": 0.000129}, {"x": "Montana", "y": 4e-06}, {"x": "Nebraska", "y": 0.0}, {"x": "Nevada", "y": 5e-05}, {"x": "New Hampshire", "y": 0.0}, {"x": "New Jersey", "y": 0.685459}, {"x": "New Mexico", "y": 0.0}, {"x": "New York", "y": 1.23832}, {"x": "North Carolina", "y": 0.019932}, {"x": "North Dakota", "y": 1.5e-05}, {"x": "Ohio", "y": 0.039392}, {"x": "Oklahoma", "y": 0.001056}, {"x": "Oregon", "y": 0.085491}, {"x": "Pennsylvania", "y": 0.849194}, {"x": "Rhode Island", "y": 0.038899}, {"x": "South Carolina", "y": 0.0}, {"x": "South Dakota", "y": 0.0}, {"x": "Tennessee", "y": 0.107341}, {"x": "Texas", "y": 0}, {"x": "Utah", "y": 0.0}, {"x": "Vermont", "y": 0.035542}, {"x": "Virginia", "y": 0.000196}, {"x": "Washington", "y": 0.157286}, {"x": "West Virginia", "y": 0.0}, {"x": "Wisconsin", "y": 0.0}, {"x": "Wyoming", "y": 0.0}]}, {"key": "Documentary and Stock Transfer Taxes", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.036668}, {"x": "Alaska", "y": 0}, {"x": "Arizona", "y": 0.0}, {"x": "Arkansas", "y": 0.032715}, {"x": "California", "y": 0.0}, {"x": "Colorado", "y": 0.0}, {"x": "Connecticut", "y": 0.173839}, {"x": "Delaware", "y": 0.072347}, {"x": "Florida", "y": 2.10937}, {"x": "Georgia", "y": 0.010698}, {"x": "Hawaii", "y": 0.075831}, {"x": "Idaho", "y": 0.0}, {"x": "Illinois", "y": 0.056552}, {"x": "Indiana", "y": 0.0}, {"x": "Iowa", "y": 0.014786}, {"x": "Kansas", "y": 0.0}, {"x": "Kentucky", "y": 0.003271}, {"x": "Louisiana", "y": 0.0}, {"x": "Maine", "y": 0.024777}, {"x": "Maryland", "y": 0.158844}, {"x": "Massachusetts", "y": 0.24685}, {"x": "Michigan", "y": 0.233416}, {"x": "Minnesota", "y": 0.166912}, {"x": "Mississippi", "y": 0.0}, {"x": "Missouri", "y": 0.01134}, {"x": "Montana", "y": 0.0}, {"x": "Nebraska", "y": 0.009044}, {"x": "Nevada", "y": 0.064712}, {"x": "New Hampshire", "y": 0.106745}, {"x": "New Jersey", "y": 0.376772}, {"x": "New Mexico", "y": 0.0}, {"x": "New York", "y": 1.037341}, {"x": "North Carolina", "y": 0.045353}, {"x": "North Dakota", "y": 0.0}, {"x": "Ohio", "y": 0}, {"x": "Oklahoma", "y": 0.016296}, {"x": "Oregon", "y": 0.003114}, {"x": "Pennsylvania", "y": 0.438984}, {"x": "Rhode Island", "y": 0.017631}, {"x": "South Carolina", "y": 0.060334}, {"x": "South Dakota", "y": 0.000192}, {"x": "Tennessee", "y": 0.167055}, {"x": "Texas", "y": 0.0}, {"x": "Utah", "y": 0.0}, {"x": "Vermont", "y": 0.030931}, {"x": "Virginia", "y": 0.310205}, {"x": "Washington", "y": 0.649085}, {"x": "West Virginia", "y": 0.010392}, {"x": "Wisconsin", "y": 0.051179}, {"x": "Wyoming", "y": 0.0}]}, {"key": "Severance Taxes", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.115437}, {"x": "Alaska", "y": 2.456212}, {"x": "Arizona", "y": 0.02619}, {"x": "Arkansas", "y": 0.108511}, {"x": "California", "y": 0.038686}, {"x": "Colorado", "y": 0.245087}, {"x": "Connecticut", "y": 0.0}, {"x": "Delaware", "y": 0}, {"x": "Florida", "y": 0.0491}, {"x": "Georgia", "y": 0}, {"x": "Hawaii", "y": 0}, {"x": "Idaho", "y": 0.006004}, {"x": "Illinois", "y": 0}, {"x": "Indiana", "y": 0.0025}, {"x": "Iowa", "y": 0}, {"x": "Kansas", "y": 0.124883}, {"x": "Kentucky", "y": 0.241989}, {"x": "Louisiana", "y": 0.86215}, {"x": "Maine", "y": 0}, {"x": "Maryland", "y": 0}, {"x": "Massachusetts", "y": 0}, {"x": "Michigan", "y": 0.073488}, {"x": "Minnesota", "y": 0.042062}, {"x": "Mississippi", "y": 0.091059}, {"x": "Missouri", "y": 5e-06}, {"x": "Montana", "y": 0.305614}, {"x": "Nebraska", "y": 0.006762}, {"x": "Nevada", "y": 0.111395}, {"x": "New Hampshire", "y": 0}, {"x": "New Jersey", "y": 0}, {"x": "New Mexico", "y": 1.066343}, {"x": "New York", "y": 0}, {"x": "North Carolina", "y": 0.001776}, {"x": "North Dakota", "y": 3.293053}, {"x": "Ohio", "y": 0.010194}, {"x": "Oklahoma", "y": 0.679406}, {"x": "Oregon", "y": 0.023424}, {"x": "Pennsylvania", "y": 0}, {"x": "Rhode Island", "y": 0}, {"x": "South Carolina", "y": 0}, {"x": "South Dakota", "y": 0.00895}, {"x": "Tennessee", "y": 0.002487}, {"x": "Texas", "y": 6.01435}, {"x": "Utah", "y": 0.155743}, {"x": "Vermont", "y": 0}, {"x": "Virginia", "y": 0.002165}, {"x": "Washington", "y": 0.04195}, {"x": "West Virginia", "y": 0.681824}, {"x": "Wisconsin", "y": 0.008984}, {"x": "Wyoming", "y": 0.883025}]}, {"key": "Taxes, NEC", "yAxis": "1", "values": [{"x": "Alabama", "y": 0.0}, {"x": "Alaska", "y": 0.0}, {"x": "Arizona", "y": 0.0}, {"x": "Arkansas", "y": 0.024743}, {"x": "California", "y": 0.076204}, {"x": "Colorado", "y": 0.0}, {"x": "Connecticut", "y": 0.000778}, {"x": "Delaware", "y": 0.001086}, {"x": "Florida", "y": 0.0}, {"x": "Georgia", "y": 0.0}, {"x": "Hawaii", "y": 0.0}, {"x": "Idaho", "y": 0.0}, {"x": "Illinois", "y": 0.0}, {"x": "Indiana", "y": 0.0}, {"x": "Iowa", "y": 0.0}, {"x": "Kansas", "y": 0.0}, {"x": "Kentucky", "y": 0.0}, {"x": "Louisiana", "y": 0.0}, {"x": "Maine", "y": 0.0}, {"x": "Maryland", "y": 0.197806}, {"x": "Massachusetts", "y": 0.197503}, {"x": "Michigan", "y": 0.0}, {"x": "Minnesota", "y": 0.0}, {"x": "Mississippi", "y": 0.000525}, {"x": "Missouri", "y": 7.4e-05}, {"x": "Montana", "y": 0.003502}, {"x": "Nebraska", "y": 0.0}, {"x": "Nevada", "y": 0.38584}, {"x": "New Hampshire", "y": 0.0}, {"x": "New Jersey", "y": 0.0}, {"x": "New Mexico", "y": 0.0}, {"x": "New York", "y": 1.44723}, {"x": "North Carolina", "y": 0.0}, {"x": "North Dakota", "y": 0.0}, {"x": "Ohio", "y": 0.0}, {"x": "Oklahoma", "y": 0.0}, {"x": "Oregon", "y": 0.0}, {"x": "Pennsylvania", "y": 0.025986}, {"x": "Rhode Island", "y": 0.0}, {"x": "South Carolina", "y": 0.0}, {"x": "South Dakota", "y": 0.0}, {"x": "Tennessee", "y": 0.019779}, {"x": "Texas", "y": 0.0}, {"x": "Utah", "y": 0.0}, {"x": "Vermont", "y": 0.004567}, {"x": "Virginia", "y": 0.124248}, {"x": "Washington", "y": 0.0}, {"x": "West Virginia", "y": 0.0}, {"x": "Wisconsin", "y": 0.011802}, {"x": "Wyoming", "y": 0.006417}]}];
+
+    nv.addGraph(function() {
+        var chart = nv.models.multiBarChart();
+
+        chart.margin({top: 30, right: 60, bottom: 20, left: 60});
+
+        var datum = data_chart7;
+
+
+
+
+
+            chart.yAxis
+                .tickFormat(d3.format(',.2f'));
+
+                    chart.tooltipContent(function(key, y, e, graph) {
+                        var x = String(graph.point.x);
+                        var y = String(graph.point.y);
+                                            if(key == 'Death and Gift Taxes'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Documentary and Stock Transfer Taxes'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Severance Taxes'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+                    if(key == 'Taxes, NEC'){
+                        var y =  String(graph.point.y)  + ' Million USD';
+                    }
+
+                        tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+                        return tooltip_str;
+                    });
+
+      chart.showLegend(true);
+
+
+
+        
+
+
+        d3.select('#chart7 svg')
+            .datum(datum)
+            .transition().duration(500)
+            .attr('width', 1024)
+            .attr('height', 400)
+            .call(chart);
+
+
+    });
+
+
+
+
+    </script>
+</center><center><p>PSIT Project</p><p>Chsysnon Nikornpornudom 57070024</p><p>Sirawich Phonsukkarn 57070131</p></center>
