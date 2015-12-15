@@ -371,7 +371,7 @@ file.write("</center>")
 
 file.write("<center>")
 file.write("<p>PSIT Project</p>")
-file.write("<p>Chsysnon Nikornpornudom 57070024</p>")
+file.write("<p>Chayanon Nikornpornudom 57070024</p>")
 file.write("<p>Sirawich Phonsukkarn 57070131</p>")
 file.write("</center>")
 
